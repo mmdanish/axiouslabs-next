@@ -73,6 +73,7 @@ export default function Footer() {
             { href: "/careers", label: "Careers" },
             { href: "/blog", label: "Blog" },
             { href: "/contact", label: "Contact" },
+            { href: "/privacy-policy", label: "Privacy Policy" },
           ]}
         />
         <FooterCol

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Check } from "lucide-react";
 import { products } from "@/lib/cms";
 import { FadeIn } from "@/components/Motion";
@@ -49,8 +50,15 @@ export default async function ProductDetailPage({ params }) {
               <div className="lg:col-span-6">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-brand opacity-20 blur-3xl rounded-full" aria-hidden />
-                  <div className="relative rounded-2xl overflow-hidden border border-border shadow-elevated">
-                    <img src="/placeholder-cover.svg" alt={`${product.name} preview`} className="w-full" />
+                  <div className="relative rounded-2xl overflow-hidden border border-border bg-card shadow-elevated p-8 sm:p-12 flex items-center justify-center">
+                    <Image
+                      src={product.image || "/products/sellops.png"}
+                      alt={`${product.name} preview`}
+                      width={380}
+                      height={380}
+                      className="max-h-72 sm:max-h-96 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                      priority
+                    />
                   </div>
                 </div>
               </div>

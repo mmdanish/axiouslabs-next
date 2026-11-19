@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { products } from "@/lib/cms";
 import { FadeIn } from "@/components/Motion";
@@ -59,8 +60,14 @@ export default function ProductsPage() {
                 Explore SellOps ERP <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="rounded-3xl overflow-hidden">
-              <img src="/placeholder-cover.svg" alt={product.name} className="w-full rounded-2xl" />
+            <div className="rounded-3xl border border-border bg-card shadow-soft p-8 sm:p-12 flex items-center justify-center">
+              <Image
+                src={product.image || "/products/sellops.png"}
+                alt={product.name}
+                width={380}
+                height={380}
+                className="max-h-72 sm:max-h-96 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              />
             </div>
           </div>
         </FadeIn>
